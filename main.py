@@ -1,4 +1,4 @@
-from fastapi import FastAPI, status, Depends
+from fastapi import FastAPI, status
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -7,11 +7,8 @@ from update_table import (
     store_message,
     get_all_messages_for_chat,
     current_epoch_time,
-    decimal_to_float,
 )
 import logging
-import os
-import json
 from api.audio import (
     get_elevenlabs_audio,
     generate_mp3_file_name,

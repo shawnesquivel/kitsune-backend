@@ -59,21 +59,6 @@ def get_all_messages_for_chat(chat_id):
     return response["Items"]
 
 
-def decimal_to_float(obj):
-    """
-    Convert Decimal objeccts to floats.
-
-    Note:
-    - AWS often retrieves numbers as Decimals.
-    - Decimal objects are not serializable to JSON by default.
-    - Converts to floats, which are JSON serializable.
-
-    """
-    if isinstance(obj, Decimal):
-        return float(obj)
-    raise TypeError("Object of type Decimal is not JSON serializable")
-
-
 # Insert a sample conversation
 if __name__ == "__main__":
     # For testing
